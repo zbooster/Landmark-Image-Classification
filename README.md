@@ -64,9 +64,31 @@ dataloaders = {x: DataLoader(image_datasets[x],
 ```
 
 ## 모델링
-Resnet50을 이용한 전이학습을 계획함.
+### 전이학습
+Resnet50을 이용한 전이학습을 계획함. (requires_grad = False는 conv3_x까지 적용)
+![Resnet50](https://user-images.githubusercontent.com/100823210/183578724-b8298ea1-5336-4580-99b0-1c6109194491.png)
 
+### 옵티마이저
+Adam을 사용
+
+### 스케쥴러
+7번째 Epoch마다 0.1배씩 낮아지게 설정
+```python
+# Decay LR by a factor of 0.1 every 7 epochs
+exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
+```
 
 ## 성능 개선
-(작성중...)
+최적의 파라미터 튜닝값을 찾기위해 Weights & Biases의 Sweeps 기능을 이용하여 다양한 변수를 변경하여 반복 수행함.
 
+[Hyperparameter-Sweeps](https://wandb.ai/zbooster/Hyperparameter-Sweeps?workspace=user-zbooster)
+
+## 결과
+Train과 Validation Accuracy가 매우 높게 나옴.
+![Result](https://user-images.githubusercontent.com/100823210/183580705-a1af4afb-6608-4389-b921-3e8f287cb751.png)
+
+일부 향교나 서원와 같은 이미지는 잘 분류하지 못함.
+![actual pred](https://user-images.githubusercontent.com/100823210/183580924-f71cab66-f252-409b-bccf-3e5376cf1677.png)
+
+## 의문점
+- Accuracy가 너무 높음. 데이터 특성으로 인한 과적합 문제가 발생하지 않았나?
