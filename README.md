@@ -135,5 +135,5 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
 ## 🤲 팀원 소개 
 |팀원|연락|
 |------|---|
-|김송현|[G.mail](zpaladin1213@gmail.com), [Velog](https://velog.io/@zbooster)|
-|김해솔|[G.mail](lunchtime99@gmail.com) , [Velog](https://velog.io/@kim_haesol)|
+|김송현|[G.mail](zpaladin1213@gmail.com) │ [Velog](https://velog.io/@zbooster)|
+|김해솔|[G.mail](lunchtime99@gmail.com) │ [Velog](https://velog.io/@kim_haesol)|
