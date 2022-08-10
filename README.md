@@ -1,3 +1,7 @@
+📋 Introduction
+---
+- 이미지 분류 딥러닝을 구현하고자 했으며, 최대한의 Accurary를 뽑아내자라는 목표를 잡았음
+
 # 랜드마크 이미지 분류
 ## 개요
 제로베이스에서 배운 Deep Learning 강의 기반으로 이미지 분류에 도전해보기 위해 
@@ -5,9 +9,6 @@
 
 [데이콘/ 랜드마크 분류 AI 경진대회](https://dacon.io/competitions/official/235585/overview/description)
 
-## 목표
-이미지 분류 딥러닝 구현
-최대한의 Accurary 뽑아내기
 
 ## 데이터 수집
 대회에서는 데이콘에서 제공한 데이터가 있었지만 현재는 다운로드가 불가능함. Q&A를 살펴본 결과 AI Hub에서 다운로드가 가능한것으로 확인됨
@@ -20,6 +21,17 @@
 - 사진크기: 4032 x 3024
 - Class: 84개
 - Training(12396장)과 Validation(1504장)이미지가 나누어져 있음.
+
+
+## 🎯 Result
+Train과 Validation Accuracy가 매우 높게 나옴.
+
+![Result](https://user-images.githubusercontent.com/100823210/183580705-a1af4afb-6608-4389-b921-3e8f287cb751.png)
+
+일부 향교나 서원와 같은 이미지는 잘 분류하지 못함.
+
+![actual pred](https://user-images.githubusercontent.com/100823210/183580924-f71cab66-f252-409b-bccf-3e5376cf1677.png)
+
 
 ## 전처리
 ### 사전작업
@@ -67,10 +79,18 @@ dataloaders = {x: DataLoader(image_datasets[x],
                              num_workers=2) for x in transform.keys()}
 ```
 
-## 모델링
+## 🔎 Modeling
 ### 전이학습
 Resnet50을 이용한 전이학습을 계획함. (requires_grad = False는 conv3_x까지 적용)
 ![Resnet50](https://user-images.githubusercontent.com/100823210/183578724-b8298ea1-5336-4580-99b0-1c6109194491.png)
+
+#### Resnet50을 선택한 이유
+1. 학습 난이도가 매우 낮아진다
+2. 깊이가 깊어질수록 높은 정확도 향상을 보임
+3. 많은 수의 Layer를 누적하여 깊은 Network를 설계할 때 여러 문제가 발생하는 CNN문제를 보완
+
+### Sweeps ( weights & Biases)
+web에서 결과에 대한 시각화 기능을 지원하기에 sweeps를 통한 Accurary와 Loss function 시각화
 
 ### 옵티마이저
 Adam을 사용
@@ -87,12 +107,12 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
 
 [Hyperparameter-Sweeps](https://wandb.ai/zbooster/Hyperparameter-Sweeps?workspace=user-zbooster)
 
-## 결과
-Train과 Validation Accuracy가 매우 높게 나옴.
-![Result](https://user-images.githubusercontent.com/100823210/183580705-a1af4afb-6608-4389-b921-3e8f287cb751.png)
+## ⚙️ Limitations
+- Accuracy가 너무 높음. 
+    - 100%의 Accuracy가 나오기도 했음.
+        - 데이터의 양이 적어져서 이런가 의문점
+- 데이터 특성으로 인한 과적합 문제가 발생하지 않았나?
 
-일부 향교나 서원와 같은 이미지는 잘 분류하지 못함.
-![actual pred](https://user-images.githubusercontent.com/100823210/183580924-f71cab66-f252-409b-bccf-3e5376cf1677.png)
-
-## 의문점
-- Accuracy가 너무 높음. 데이터 특성으로 인한 과적합 문제가 발생하지 않았나?
+## 📖 Reference
+- 마이크로소프트 연구원 Kaiming He 외 3인(2015), Deep Residual Learning for Image Recognition
+    - https://arxiv.org/pdf/1512.03385.pdf
