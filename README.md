@@ -5,6 +5,10 @@
 
 [데이콘/ 랜드마크 분류 AI 경진대회](https://dacon.io/competitions/official/235585/overview/description)
 
+## 목표
+이미지 분류 딥러닝 구현
+최대한의 Accurary 뽑아내기
+
 ## 데이터 수집
 대회에서는 데이콘에서 제공한 데이터가 있었지만 현재는 다운로드가 불가능함. Q&A를 살펴본 결과 AI Hub에서 다운로드가 가능한것으로 확인됨
 
