@@ -1,4 +1,4 @@
- ![랜드마크_썸네일](https://user-images.githubusercontent.com/100823210/184097630-2dcbe15e-e48e-479a-9d67-b8be90761401.PNG)
+![랜드마크_썸네일](https://user-images.githubusercontent.com/100823210/184104413-4479c700-fbb4-4d17-acee-ff05a11fbb36.png)
 
  
  📋 소개
