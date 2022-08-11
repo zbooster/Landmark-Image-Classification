@@ -1,8 +1,9 @@
  📋 소개
 ---
+![1](https://user-images.githubusercontent.com/104749023/183792578-7aac5169-8e8d-4af9-afd3-0da508003fd9.PNG)
+
 - Resnet50을 활용해 이미지 분류 딥러닝을 했습니다. 
 
-![1](https://user-images.githubusercontent.com/104749023/183792578-7aac5169-8e8d-4af9-afd3-0da508003fd9.PNG)
 
 # 랜드마크 이미지 분류
 ## 개요
