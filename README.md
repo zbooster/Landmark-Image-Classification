@@ -1,25 +1,19 @@
 ![랜드마크_썸네일](https://user-images.githubusercontent.com/100823210/184104413-4479c700-fbb4-4d17-acee-ff05a11fbb36.png)
 
  
- 📋 소개
----
-
-- Resnet50을 활용해 이미지 분류 딥러닝을 했습니다. 
-
-
-# 랜드마크 이미지 분류
-## 개요
-Deep Learning 기반으로 이미지 분류에 도전해보기 위해 데이콘 경진대회를 참여했습니다.
-
-[데이콘/ 랜드마크 분류 AI 경진대회](https://dacon.io/competitions/official/235585/overview/description)
-
+## 📋 소개
+공개된 데이터를 가지고 Deep Learning을 이용하여 이미지 분류를 시도 했습니다. 
 
 ## 데이터 수집
-대회에서는 데이콘에서 제공한 데이터가 있었지만 현재는 다운로드가 불가능함. Q&A를 살펴본 결과 AI Hub에서 다운로드가 가능한것으로 확인했습니다.
+이미지 종류를 랜드마크 이미지를 선택한 이유는 다음과 같습니다.
+- 사진의 위치정보를 좀 더 정확하게 설정할 수 있음.
+- SNS업로드시 자동으로 랜드마크의 해시태그를 달아줄 수 있음.
 
-[AI Hub/ 랜드마크 이미지](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=56)
+데이터는 AI Hub에서 다운로드 받습니다.
 
-전체 데이터는 12TB로 학습하는 입장에서 다루기에 크기 때문에 가장 작은 지역단위인 세종시 데이터만 활용했습니다.
+[AI Hub - 랜드마크 이미지](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=56)
+
+전체 데이터는 12TB로 학습하는 입장에서 크기 때문에 다루기 어려워서 가장 작은 지역단위인 세종시 데이터만 활용했습니다.
 
 - 총 48 GB
 - 사진크기: 4032 x 3024
