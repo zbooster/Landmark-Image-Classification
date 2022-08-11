@@ -1,7 +1,8 @@
+ ![랜드마크_썸네일](https://user-images.githubusercontent.com/100823210/184097630-2dcbe15e-e48e-479a-9d67-b8be90761401.PNG)
+
+ 
  📋 소개
 ---
-![1](https://user-images.githubusercontent.com/104749023/183792578-7aac5169-8e8d-4af9-afd3-0da508003fd9.PNG)
-
 
 - Resnet50을 활용해 이미지 분류 딥러닝을 했습니다. 
 
